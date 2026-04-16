@@ -10,7 +10,7 @@ import (
 )
 
 var singMuxProtocolList = []string{"h2mux", "smux", "yamux"}
-var singMuxProtocolListLong = []string{"yamux"} // don't test "smux", "h2mux" because it has some confused bugs
+var singMuxProtocolListLong = []string{"smux", "yamux"} // don't test "h2mux" because it has some confused bugs
 
 // notCloseProxyAdapter is a proxy adapter that does not close the underlying outbound.ProxyAdapter.
 // The outbound.SingMux will close the underlying outbound.ProxyAdapter when it is closed, but we don't want to close it.
