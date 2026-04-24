@@ -25,7 +25,7 @@ jobs:
       
       - name: Trigger update-dependencies
         run: |
-          curl -X POST https://api.github.com/repos/kafeixiang/FlClash/dispatches \
-            -H "Accept: application/vnd.github.everest-preview+json" \
-            -H "Authorization: token ${{ steps.generate-token.outputs.token }}" \
-            -d '{"event_type": "core-updated"}'
+          curl -X POST https://api.github.com/repos/kafeixiang/FlClash/actions/workflows/update-dependencies.yaml/dispatches \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer ${{ steps.generate-token.outputs.token }}" \
+            -d '{"ref": "dev-core"}'
